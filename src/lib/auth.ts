@@ -21,7 +21,7 @@ export async function getStaffWithOrg() {
   if (!staff) {
     const { data: org } = await supabase
       .from('organizations')
-      .insert({ name: 'マイ組織' })
+      .insert({ name: 'マイ組織', email: user.email! })
       .select()
       .single()
 
